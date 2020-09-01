@@ -25,9 +25,11 @@ Question 2: For this question you’ll need to use SQL. Follow this link to acce
 (1) How many orders were shipped by Speedy Express in total?
 
 54.
+
 '''sql
 SELECT count(*) as total FROM Orders where ShipperID in (select ShipperID from Shippers where ShipperName ="Speedy   Express")
 '''
+
 (2) What is the last name of the employee with the most orders?
 
 Peacock.
