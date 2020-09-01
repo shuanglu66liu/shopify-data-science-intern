@@ -23,16 +23,19 @@ On Shopify, we have exactly 100 sneaker shops, and each of these shops sells onl
 Question 2: For this question you’ll need to use SQL. Follow this link to access the data set required for the challenge. Please use queries to answer the following questions. Paste your queries along with your final numerical answers below.
 
 (1) How many orders were shipped by Speedy Express in total?
+
 54.
 
-SELECT count(*) as total FROM Orders where ShipperID in (select ShipperID from Shippers where ShipperName ="Speedy  Express")
+SELECT count(*) as total FROM Orders where ShipperID in (select ShipperID from Shippers where ShipperName ="Speedy   Express")
 
 (2) What is the last name of the employee with the most orders?
+
 Peacock.
 
 select LastName from Employees where EmployeeID in (SELECT EmployeeID FROM Orders group by EmployeeID order by count(OrderID) desc limit 1)
 
 (3) What product was ordered the most by customers in Germany?
+
 40. 
 
 SELECT ProductID FROM OrderDetails od inner join orders o on od.orderID = o.orderID 
